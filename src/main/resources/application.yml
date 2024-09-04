@@ -1,0 +1,21 @@
+#
+#spring:
+#  datasource:
+#    url: jdbc:postgresql://localhost:5432/demodb
+#    username: muskank
+#    password: muskan
+#    driver-class-name: org.postgresql.Driver
+#
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: "*"
+#  endpoint:
+#    health:
+#      show-details: always
+#  security:
+#    enabled: false
+#
+#server:
+#   port: 8080

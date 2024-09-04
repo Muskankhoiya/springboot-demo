@@ -1,0 +1,32 @@
+pipeline {
+    agent any
+
+    tools {
+        maven 'maven'
+        jdk 'java17'
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'master', credentialsId: 'git-credentials', url: 'https://github.com/Muskankhoiya/springboot.git'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                script {
+                    sh 'mvn clean package'
+                }
+            }
+        }
+
+        stage('Test') {
+            steps {
+                script {
+                    sh 'mvn test'
+                }
+            }
+        }
+    }
+}
